@@ -91,23 +91,21 @@ class MyHomePage extends StatelessWidget {
             children: [
               HeadPic(),
               SizedBox(height: 10),
-              Expanded(
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: infos.length,
-                  itemBuilder: (context, index) {
-                    Map<String, dynamic> info = infos[index];
-                    return Column(
-                      children: [
-                        Info(
-                          data: info['text'],
-                          imageUrls: info['imageUrls'],
-                        ),
-                        SizedBox(height: 10),
-                      ],
-                    );
-                  },
-                ),
+              ListView.builder(
+                shrinkWrap: true,
+                itemCount: infos.length,
+                itemBuilder: (context, index) {
+                  Map<String, dynamic> info = infos[index];
+                  return Column(
+                    children: [
+                      Info(
+                        data: info['text'],
+                        imageUrls: info['imageUrls'],
+                      ),
+                      SizedBox(height: 10),
+                    ],
+                  );
+                },
               ),
             ],
           ),
