@@ -7,16 +7,19 @@ class ChiikawTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Column(
-          children: [
-            Text(chiikawa.name),
-            Text(chiikawa.text),
-          ],
-        ),
-      ],
+    return Container(
+      color: Colors.white,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(chiikawa.name),
+          Wrap(
+            children: [
+              Text(chiikawa.text),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

@@ -57,15 +57,20 @@ class MyHomePage extends StatelessWidget {
               itemCount: 3,
               itemBuilder: (context, index) {
                 var chiikawa = chiikawas[index];
-                return Card(
-                  color: Colors.lightBlue,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        Text(chiikawa.name),
-                        Text(chiikawa.text),
-                      ],
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            ChiikawTile(chiikawa: chiikawas[index]),
+                      ),
+                    );
+                  },
+                  child: Card(
+                    child: ListTile(
+                      title: Text(chiikawa.name),
+                      subtitle: Text(chiikawa.text),
                     ),
                   ),
                 );
