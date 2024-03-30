@@ -1,9 +1,10 @@
 import 'package:ebook/chiikawa.dart';
 import 'package:flutter/material.dart';
 
-class ChiikawTile extends StatelessWidget {
-  final Chiikawa chiikawa;
-  const ChiikawTile({Key? key, required this.chiikawa}) : super(key: key);
+class ChiikawDetailPageTile extends StatelessWidget {
+  final Chiikawa chiikawainfo;
+  const ChiikawDetailPageTile({Key? key, required this.chiikawainfo})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,11 +13,10 @@ class ChiikawTile extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(chiikawa.name),
-          Wrap(
-            children: [
-              Text(chiikawa.text),
-            ],
+          Image.asset(
+            'assets/${chiikawainfo.image}.png',
+            width: 78,
+            height: 78,
           ),
         ],
       ),

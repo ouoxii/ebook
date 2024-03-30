@@ -1,0 +1,42 @@
+[
+    {
+        "name": "烏薩奇",
+        "birthday": "2019年1月22日",
+        "Image": "usagi",
+        "weapon": "中間黃色兩端白色的棍棒，一端有兔兔的塗鴉，兩頭可以發射火藥",
+        "residence": "未知",
+        "description": "《吉伊卡哇》系列中的主要角色之一。是吉伊和小八的好朋友，以兔子為原型。身體小小的，身體的毛髮是黃色，尾巴為白色的大絨球。靠除草、採集和討伐為生，已考取三級除草證。性格活潑，精力充沛，無所畏懼，面對困難會想出很多點子。看似大條和無所謂，但會在乎朋友們。樂於和朋友們分享食物，在朋友遇到困難時陪伴和保護對方，對抗敵人。會發出各種奇特的叫聲來表達和溝通，如「烏拉」「呀哈」等，情緒高漲地跑來跑去。行為難以預測，經常有出其不意的舉動。戰鬥力較強，在緊要關頭能帶領同伴們扭轉局勢。經常在二手店購入奇怪的道具。有時會拿來可疑的物品，也有因此受到詛咒的時候。彈吉他的技藝高超。在地下洞穴里的酒吧當過DJ，用樹葉摩擦橡子發出音樂聲。私生活充滿謎團。"
+    },
+    {
+        "name": "小八",
+        "birthday": "February 7",
+        "Image": "hamo",
+        "weapon": "Guard Stick",
+        "residence": "Sector 5 Slums, Midgar",
+        "description": "Aerith is a kind and cheerful flower seller from the slums of Midgar, who possesses the mysterious power to heal others and communicate with the Planet. She is the last of the Cetra, an ancient race with powerful magical abilities, making her the target of the Shinra Electric Power Company. Throughout her journey, Aerith becomes a key figure in the fight against Shinra and the quest to save the Planet from an even greater threat."
+    },
+    {
+        "name": "小可愛",
+        "birthday": "February 7",
+        "Image": "chiikawa",
+        "weapon": "Guard Stick",
+        "residence": "Sector 5 Slums, Midgar",
+        "description": "Aerith is a kind and cheerful flower seller from the slums of Midgar, who possesses the mysterious power to heal others and communicate with the Planet. She is the last of the Cetra, an ancient race with powerful magical abilities, making her the target of the Shinra Electric Power Company. Throughout her journey, Aerith becomes a key figure in the fight against Shinra and the quest to save the Planet from an even greater threat."
+    },
+    {
+        "name": "小桃",
+        "birthday": "February 7",
+        "Image": "monmonga",
+        "weapon": "Guard Stick",
+        "residence": "Sector 5 Slums, Midgar",
+        "description": "Aerith is a kind and cheerful flower seller from the slums of Midgar, who possesses the mysterious power to heal others and communicate with the Planet. She is the last of the Cetra, an ancient race with powerful magical abilities, making her the target of the Shinra Electric Power Company. Throughout her journey, Aerith becomes a key figure in the fight against Shinra and the quest to save the Planet from an even greater threat."
+    },
+    {
+        "name": "栗子饅頭",
+        "birthday": "February 7",
+        "Image": "kurimanjo",
+        "weapon": "Guard Stick",
+        "residence": "Sector 5 Slums, Midgar",
+        "description": "Aerith is a kind and cheerful flower seller from the slums of Midgar, who possesses the mysterious power to heal others and communicate with the Planet. She is the last of the Cetra, an ancient race with powerful magical abilities, making her the target of the Shinra Electric Power Company. Throughout her journey, Aerith becomes a key figure in the fight against Shinra and the quest to save the Planet from an even greater threat."
+    }
+]

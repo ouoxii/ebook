@@ -1,6 +1,9 @@
-import 'package:ebook/chiikaw_tile.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:ebook/chiikawa_tile.dart';
 import 'package:ebook/chiikawa.dart';
 import 'package:flutter/material.dart';
+import 'package:ebook/story.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,11 +24,17 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  final List<Chiikawa> chiikawas = const [
-    Chiikawa(name: '烏薩奇', text: '相信就會有魔法,夢想成真'),
-    Chiikawa(name: '小八', text: '人只有用心,才能看見真實的美'),
-    Chiikawa(name: '小可愛', text: '一個指環統治他們,勇者拯救世界'),
-  ];
+  Future<List<Chiikawa>> loadChiikawas() async {
+    String jsonString = await rootBundle.loadString('chiikawas.json');
+    final List<dynamic> jsonResponse = json.decode(jsonString);
+    return jsonResponse.map((item) => Chiikawa.fromJson(item)).toList();
+  }
+
+  Future<List<Story>> loadStory() async {
+    String jsonString = await rootBundle.loadString('story.json');
+    final List<dynamic> jsonResponse = json.decode(jsonString);
+    return jsonResponse.map((item) => Story.fromJson(item)).toList();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,36 +53,39 @@ class MyHomePage extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            GridView.count(
-              padding: const EdgeInsets.all(10),
-              crossAxisCount: 2,
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 20,
-              children: [
-                for (var chiikawa in chiikawas) ChiikawTile(chiikawa: chiikawa)
-              ],
-            ),
-            ListView.builder(
-              itemCount: 3,
-              itemBuilder: (context, index) {
-                var chiikawa = chiikawas[index];
-                return GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            ChiikawTile(chiikawa: chiikawas[index]),
-                      ),
+            FutureBuilder<List<Chiikawa>>(
+              future: loadChiikawas(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.done) {
+                  if (snapshot.hasData) {
+                    return GridView.count(
+                      crossAxisCount: 2,
+                      children: snapshot.data!
+                          .map((chiikawa) => ChiikawaTile(chiikawa: chiikawa))
+                          .toList(),
                     );
-                  },
-                  child: Card(
-                    child: ListTile(
-                      title: Text(chiikawa.name),
-                      subtitle: Text(chiikawa.text),
-                    ),
-                  ),
-                );
+                  } else if (snapshot.hasError) {
+                    return Text("Error: ${snapshot.error}");
+                  }
+                }
+                return CircularProgressIndicator();
+              },
+            ),
+            FutureBuilder<List<Story>>(
+              future: loadStory(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.done) {
+                  if (snapshot.hasData) {
+                    return ListView(
+                      children: snapshot.data!
+                          .map((story) => ListTile(title: Text(story.topic)))
+                          .toList(),
+                    );
+                  } else if (snapshot.hasError) {
+                    return Text("Error: ${snapshot.error}");
+                  }
+                }
+                return CircularProgressIndicator();
               },
             ),
           ],
