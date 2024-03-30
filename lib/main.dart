@@ -4,6 +4,7 @@ import 'package:ebook/chiikawa_tile.dart';
 import 'package:ebook/chiikawa.dart';
 import 'package:flutter/material.dart';
 import 'package:ebook/story.dart';
+import 'package:ebook/story_tile.dart';
 
 void main() {
   runApp(MyApp());
@@ -46,8 +47,8 @@ class MyHomePage extends StatelessWidget {
           title: Text('Chiikawa Home Page'),
           bottom: TabBar(
             tabs: <Widget>[
-              Tab(icon: Icon(Icons.directions_car)),
-              Tab(icon: Icon(Icons.directions_transit)),
+              Tab(icon: Icon(Icons.view_module)),
+              Tab(icon: Icon(Icons.view_list)),
             ],
           ),
         ),
@@ -76,10 +77,12 @@ class MyHomePage extends StatelessWidget {
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.done) {
                   if (snapshot.hasData) {
-                    return ListView(
-                      children: snapshot.data!
-                          .map((story) => ListTile(title: Text(story.topic)))
-                          .toList(),
+                    return ListView.builder(
+                      itemCount: snapshot.data!.length,
+                      itemBuilder: (context, index) {
+                        final story = snapshot.data![index];
+                        return StoryDetailPageTile(story: story);
+                      },
                     );
                   } else if (snapshot.hasError) {
                     return Text("Error: ${snapshot.error}");

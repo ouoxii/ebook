@@ -1,6 +1,6 @@
 import 'package:ebook/chiikawa.dart';
 import 'package:flutter/material.dart';
-import 'package:ebook/ChiikawaDetailTile.dart';
+import 'package:ebook/chiikawa_detail_tile.dart';
 
 class ChiikawaTile extends StatelessWidget {
   final Chiikawa chiikawa;
