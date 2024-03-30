@@ -44,7 +44,7 @@ class MyHomePage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Color.fromARGB(242, 242, 242, 242),
         appBar: AppBar(
-          title: Text('Chiikawa Home Page'),
+          title: const Text('Chiikawa Home Page'),
           bottom: TabBar(
             tabs: <Widget>[
               Tab(icon: Icon(Icons.view_module)),

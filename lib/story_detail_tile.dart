@@ -8,24 +8,37 @@ class StoryDetailTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Widget implementation
-    return Container(
-      color: Colors.white,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            'assets/${story.image}.png',
-            width: 250,
-            height: 250,
-          ),
-          Text(story.topic),
-          Wrap(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("劇情介紹"),
+      ),
+      body: Align(
+        alignment: Alignment.topCenter,
+        child: Container(
+          padding: EdgeInsets.all(30),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(story.text,
-                  style: TextStyle(fontSize: 12, color: Colors.black)),
+              Image.asset(
+                'assets/${story.image}.png',
+                width: 450,
+              ),
+              Text(story.topic),
+              Divider(
+                thickness: 2,
+                height: 10,
+                indent: 30,
+                endIndent: 30,
+              ),
+              Wrap(
+                children: [
+                  Text(story.text,
+                      style: TextStyle(fontSize: 15, color: Colors.black)),
+                ],
+              ),
             ],
           ),
-        ],
+        ),
       ),
     );
   }

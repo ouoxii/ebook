@@ -10,24 +10,32 @@ class ChiikawaDetailTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Widget implementation
-    return Container(
-      color: Colors.white,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            'assets/${chiikawa.image}.png',
-            width: 250,
-            height: 250,
-          ),
-          Text(chiikawa.name),
-          Wrap(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("角色介紹"),
+      ),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        padding: EdgeInsets.all(30),
+        child: Container(
+          color: Colors.white,
+          child: Column(
             children: [
-              Text(chiikawa.text,
-                  style: TextStyle(fontSize: 12, color: Colors.black)),
+              Image.asset(
+                'assets/${chiikawa.image}.png',
+                width: 250,
+                height: 250,
+              ),
+              Text(chiikawa.name),
+              Wrap(
+                children: [
+                  Text(chiikawa.text,
+                      style: TextStyle(fontSize: 15, color: Colors.black)),
+                ],
+              ),
             ],
           ),
-        ],
+        ),
       ),
     );
   }
