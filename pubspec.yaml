@@ -67,6 +67,12 @@ flutter:
   - assets/chiikawa.png
   - assets/chiikawas.json
   - assets/story.json
+  - assets/IMG_5315.png
+  - assets/IMG_5316.png
+  - assets/IMG_5318.png
+  - assets/IMG_2236.png
+  - assets/IMG_2237.png
+  - assets/IMG_2239.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
