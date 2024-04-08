@@ -5,6 +5,7 @@ import 'package:ebook/chiikawa.dart';
 import 'package:flutter/material.dart';
 import 'package:ebook/story.dart';
 import 'package:ebook/story_tile.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,6 +26,24 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  final AudioPlayer audioPlayer = AudioPlayer();
+
+  MyHomePage() {
+    playBackgroundMusic();
+  }
+
+  void playBackgroundMusic() async {
+    // Set the audio player to loop the audio file
+    audioPlayer.setReleaseMode(ReleaseMode.loop);
+    // Play the background music from the asset
+    try {
+      await audioPlayer.play(AssetSource('audio/chiikawa_bgm.mp3'));
+      print("Music playing successfully.");
+    } catch (e) {
+      print("Error while playing music: $e");
+    }
+  }
+
   Future<List<Chiikawa>> loadChiikawas() async {
     String jsonString = await rootBundle.loadString('chiikawas.json');
     final List<dynamic> jsonResponse = json.decode(jsonString);
