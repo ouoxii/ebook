@@ -23,7 +23,7 @@ class StoryDetailTile extends StatelessWidget {
                 'assets/${story.image}.png',
                 width: 450,
               ),
-              Text(story.topic),
+              Text(story.topic, style: TextStyle(fontSize: 25)),
               Divider(
                 thickness: 2,
                 height: 10,

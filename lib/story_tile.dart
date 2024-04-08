@@ -18,9 +18,8 @@ class StoryDetailPageTile extends StatelessWidget {
         );
       },
       child: Container(
-        color: Colors.white,
         child: Card(
-          color: Colors.lightBlue,
+          color: Colors.grey[300],
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(

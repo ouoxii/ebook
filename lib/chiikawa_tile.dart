@@ -24,8 +24,8 @@ class ChiikawaTile extends StatelessWidget {
           children: [
             Image.asset(
               'assets/${chiikawa.image}.png',
-              width: 100,
-              height: 100,
+              width: 200,
+              height: 200,
             ),
             Text(chiikawa.name),
           ],

@@ -26,7 +26,11 @@ class ChiikawaDetailTile extends StatelessWidget {
                 width: 250,
                 height: 250,
               ),
-              Text(chiikawa.name),
+              SizedBox(height: 10),
+              Text(chiikawa.name, style: TextStyle(fontSize: 25)),
+              SizedBox(height: 10),
+              Text(chiikawa.birthday),
+              SizedBox(height: 10),
               Wrap(
                 children: [
                   Text(chiikawa.text,
