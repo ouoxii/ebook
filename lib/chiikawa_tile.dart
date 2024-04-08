@@ -4,7 +4,7 @@ import 'package:ebook/chiikawa_detail_tile.dart';
 
 class ChiikawaTile extends StatelessWidget {
   final Chiikawa chiikawa;
-  const ChiikawaTile({Key? key, required this.chiikawa}) : super(key: key);
+  const ChiikawaTile({super.key, required this.chiikawa});
 
   @override
   Widget build(BuildContext context) {

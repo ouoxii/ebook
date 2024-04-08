@@ -8,10 +8,12 @@ import 'package:ebook/story_tile.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,20 +30,14 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   final AudioPlayer audioPlayer = AudioPlayer();
 
-  MyHomePage() {
+  MyHomePage({super.key}) {
     playBackgroundMusic();
   }
 
   void playBackgroundMusic() async {
-    // Set the audio player to loop the audio file
     audioPlayer.setReleaseMode(ReleaseMode.loop);
-    // Play the background music from the asset
-    try {
-      await audioPlayer.play(AssetSource('audio/chiikawa_bgm.mp3'));
-      print("Music playing successfully.");
-    } catch (e) {
-      print("Error while playing music: $e");
-    }
+
+    await audioPlayer.play(AssetSource('audio/chiikawa_bgm.mp3'));
   }
 
   Future<List<Chiikawa>> loadChiikawas() async {
@@ -61,10 +57,10 @@ class MyHomePage extends StatelessWidget {
     return DefaultTabController(
       length: 2, // 標籤的數量
       child: Scaffold(
-        backgroundColor: Color.fromARGB(242, 242, 242, 242),
+        backgroundColor: const Color.fromARGB(242, 242, 242, 242),
         appBar: AppBar(
           title: const Text('Chiikawa Home Page'),
-          bottom: TabBar(
+          bottom: const TabBar(
             tabs: <Widget>[
               Tab(icon: Icon(Icons.view_module)),
               Tab(icon: Icon(Icons.view_list)),
@@ -88,7 +84,7 @@ class MyHomePage extends StatelessWidget {
                     return Text("Error: ${snapshot.error}");
                   }
                 }
-                return CircularProgressIndicator();
+                return const CircularProgressIndicator();
               },
             ),
             FutureBuilder<List<Story>>(
@@ -107,7 +103,7 @@ class MyHomePage extends StatelessWidget {
                     return Text("Error: ${snapshot.error}");
                   }
                 }
-                return CircularProgressIndicator();
+                return const CircularProgressIndicator();
               },
             ),
           ],

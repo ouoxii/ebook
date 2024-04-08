@@ -4,7 +4,7 @@ import 'package:ebook/story_detail_tile.dart';
 
 class StoryDetailPageTile extends StatelessWidget {
   final Story story;
-  const StoryDetailPageTile({Key? key, required this.story}) : super(key: key);
+  const StoryDetailPageTile({super.key, required this.story});
 
   @override
   Widget build(BuildContext context) {

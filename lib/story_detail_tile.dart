@@ -3,19 +3,19 @@ import 'package:ebook/story.dart';
 
 class StoryDetailTile extends StatelessWidget {
   final Story story;
-  const StoryDetailTile({Key? key, required this.story}) : super(key: key);
+  const StoryDetailTile({super.key, required this.story});
 
   @override
   Widget build(BuildContext context) {
     // Widget implementation
     return Scaffold(
       appBar: AppBar(
-        title: Text("劇情介紹"),
+        title: const Text("劇情介紹"),
       ),
       body: Align(
         alignment: Alignment.topCenter,
         child: Container(
-          padding: EdgeInsets.all(30),
+          padding: const EdgeInsets.all(30),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -23,8 +23,8 @@ class StoryDetailTile extends StatelessWidget {
                 'assets/${story.image}.png',
                 width: 450,
               ),
-              Text(story.topic, style: TextStyle(fontSize: 25)),
-              Divider(
+              Text(story.topic, style: const TextStyle(fontSize: 25)),
+              const Divider(
                 thickness: 2,
                 height: 10,
                 indent: 30,
@@ -33,7 +33,7 @@ class StoryDetailTile extends StatelessWidget {
               Wrap(
                 children: [
                   Text(story.text,
-                      style: TextStyle(fontSize: 15, color: Colors.black)),
+                      style: const TextStyle(fontSize: 15, color: Colors.black)),
                 ],
               ),
             ],
